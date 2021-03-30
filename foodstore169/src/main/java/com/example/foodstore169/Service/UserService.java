@@ -1,6 +1,8 @@
 package com.example.foodstore169.Service;
 
+import com.example.foodstore169.DAO.LoginDao;
 import com.example.foodstore169.DAO.UserDao;
+import com.example.foodstore169.Model.LoginModel;
 import com.example.foodstore169.Model.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -22,5 +24,9 @@ public class UserService {
 
     public boolean getUser(UserModel user){
         return userDao.saveUser(user);
+    }
+
+
+    public boolean checkUser(LoginModel login) { return LoginDao.checkUser(login);
     }
 }
